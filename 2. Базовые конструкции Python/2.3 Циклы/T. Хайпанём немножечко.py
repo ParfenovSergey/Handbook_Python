@@ -3,12 +3,9 @@ fl = False
 for i in range(int(input())):
     if not fl:
         b = int(input())
-        h = b % 256
-        b //= 256
-        r = b % 256
-        b //= 256
-        m = b % 256
-        b //= 256
+        b, h = divmod(b, 256)
+        b, r = divmod(b, 256)
+        b, m = divmod(b, 256)
         hn = 37 * (m + r + hl) % 256
         hl = h
         if hn != h or hn > 100:
